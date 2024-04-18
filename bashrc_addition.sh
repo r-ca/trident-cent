@@ -21,6 +21,11 @@ fi
 
 function enable_tri {
 
+    if [ "$_tri_mode" = true ]; then
+        _logger "INFO" "tri-mode is already enabled"
+        return 0
+    fi
+
     _logger "INFO" "tri-mode init process started"
 
     _default_home_path=$HOME
@@ -32,6 +37,11 @@ function enable_tri {
 }
 
 function disable_tri {
+
+    if [ "$_tri_mode" = false ]; then
+        _logger "INFO" "tri-mode is already disabled"
+        return 0
+    fi
 
     _logger "INFO" "tri-mode exit process started"
 
