@@ -38,7 +38,7 @@ function enable_tri {
     _logger "INFO" "tri-mode flag was set: $TRI_MODE"
 
     _update_prompt
-    _logger "info" "prompt was updated"
+    _logger "INFO" "Prompt was updated"
 }
 
 function disable_tri {
@@ -58,5 +58,5 @@ function disable_tri {
     _logger "INFO" "tri-mode flag was set: $TRI_MODE"
 
     _update_prompt
-    _logger "info" "prompt was updated"
+    _logger "INFO" "Prompt was updated"
 }
