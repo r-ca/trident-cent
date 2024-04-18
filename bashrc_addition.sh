@@ -13,11 +13,13 @@ function _logger {
 }
 
 # プロンプトの変更
-if [ "$_tri_mode" = true ]; then
-    export PS1='[🐙 \u@\h \W]\$ '
-else
-    export PS1='[\u@\h \W]\$ '
-fi
+function _update_prompt {
+    if [ "$_tri_mode" = true ]; then
+        export PS1='[🐙 \u@\h \W]\$ '
+    else
+        export PS1='[\u@\h \W]\$ '
+    fi
+}
 
 function enable_tri {
 
@@ -34,6 +36,9 @@ function enable_tri {
     
     export _tri_mode=true
     _logger "INFO" "tri-mode flag was set: $TRI_MODE"
+
+    _update_prompt
+    _logger "info" "prompt was updated"
 }
 
 function disable_tri {
@@ -51,4 +56,7 @@ function disable_tri {
 
     export _tri_mode=false
     _logger "INFO" "tri-mode flag was set: $TRI_MODE"
+
+    _update_prompt
+    _logger "info" "prompt was updated"
 }
