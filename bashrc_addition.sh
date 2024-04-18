@@ -35,7 +35,7 @@ function enable_tri {
     _logger "INFO" "Homepath was changed: $_default_home_path -> $_alternative_home_path"
     
     export _tri_mode=true
-    _logger "INFO" "tri-mode flag was set: $TRI_MODE"
+    _logger "INFO" "tri-mode flag was set: $_tri_mode"
 
     _update_prompt
     _logger "INFO" "Prompt was updated"
@@ -57,7 +57,7 @@ function disable_tri {
     _logger "INFO" "Homepath was restored: $_alternative_home_path -> $_default_home_path"
 
     export _tri_mode=false
-    _logger "INFO" "tri-mode flag was set: $TRI_MODE"
+    _logger "INFO" "tri-mode flag was set: $_tri_mode"
 
     _update_prompt
     _logger "INFO" "Prompt was updated"
