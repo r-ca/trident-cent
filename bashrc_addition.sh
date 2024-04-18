@@ -3,7 +3,7 @@
 # ユーザー名取得
 uname=$(whoami)
 _default_home_path=''
-_tri_mode
+_tri_mode=false
 local _alternative_home_path='/home/centos'
 
 local function _logger {
