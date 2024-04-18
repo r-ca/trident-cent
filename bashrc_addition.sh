@@ -3,6 +3,7 @@
 # ユーザー名取得
 uname=$(whoami)
 _default_home_path=''
+_tri_mode
 local _alternative_home_path='/home/centos'
 
 local function _logger {
@@ -10,6 +11,13 @@ local function _logger {
     # 暫定実装
     printf "$1: $2\n"
 }
+
+# プロンプトの変更
+if [ "$_tri_mode" = true ]; then
+    export PS1='[🐙 \u@\h \W]\$ '
+else
+    export PS1='[\u@\h \W]\$ '
+fi
 
 function enable_tri {
 
@@ -19,7 +27,7 @@ function enable_tri {
     export HOME=$_alternative_home_path
     _logger "INFO" "Homepath was changed: $_default_home_path -> $_alternative_home_path"
     
-    export TRI_MODE=true
+    export _tri_mode=true
     _logger "INFO" "tri-mode flag was set: $TRI_MODE"
 }
 
@@ -31,6 +39,6 @@ function disable_tri {
     export HOME=$_default_home_path
     _logger "INFO" "Homepath was restored: $_alternative_home_path -> $_default_home_path"
 
-    export TRI_MODE=false
+    export _tri_mode=false
     _logger "INFO" "tri-mode flag was set: $TRI_MODE"
 }
