@@ -39,6 +39,8 @@ function enable_tri {
 
     _update_prompt
     _logger "INFO" "Prompt was updated"
+
+    _logger "SUCC" "✅ tri-mode init process was successfully completed"
 }
 
 function disable_tri {
@@ -59,6 +61,8 @@ function disable_tri {
 
     _update_prompt
     _logger "INFO" "Prompt was updated"
+
+    _logger "SUCC" "✅ tri-mode exit process was successfully completed"
 }
 
 function toggle_tri {
