@@ -60,3 +60,14 @@ function disable_tri {
     _update_prompt
     _logger "INFO" "Prompt was updated"
 }
+
+function toggle_tri {
+    if [ "$_tri_mode" = true ]; then
+        disable_tri
+    else
+        enable_tri
+    fi
+}
+
+# alias
+alias tri=toggle_tri
