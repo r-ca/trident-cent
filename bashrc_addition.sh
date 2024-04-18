@@ -4,9 +4,9 @@
 uname=$(whoami)
 _default_home_path=''
 _tri_mode=false
-local _alternative_home_path='/home/centos'
+_alternative_home_path='/home/centos'
 
-local function _logger {
+function _logger {
     # TODO: Implement
     # 暫定実装
     printf "$1: $2\n"
